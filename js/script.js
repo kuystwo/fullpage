@@ -18,4 +18,27 @@ $(function () {
     // 영역 콘텐츠의 세로 정렬
     verticalCentered: false,
   });
+
+  // go-top 버튼을 클릭했을 때
+  $('.btn-top').on('click', function (e) {
+    e.preventDefault();
+
+    // fullpage 메서드
+    $.fn.fullpage.moveTo(1);
+  });
+
+  // btn-up 버튼을 클릭했을 때 한 영역 위로 이동
+  $('.btn-up').on('click', function () {
+    $.fn.fullpage.moveSectionUp();
+  });
+
+  // btn-down 버튼을 클릭했을 때 한 영역 아래로 이동
+  $('.btn-down').on('click', function () {
+    $.fn.fullpage.moveSectionDown();
+  });
+
+  // btn-silent 버튼을 클릭했을 때
+  $('.btn-silent').on('click', function () {
+    $.fn.fullpage.silentMoveTo(1);
+  });
 });
